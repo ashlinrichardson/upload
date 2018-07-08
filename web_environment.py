@@ -1,19 +1,18 @@
-#webEnvironment.py
-import os; 
-def myPaths():
+import os
+def my_paths():
   from os.path import expanduser
-  myHome = expanduser("~")
-  dataPath   = os.path.abspath(myHome+'/public_html/upload/data')+'/';
-  return( [dataPath]);
+  my_home = expanduser("~")
+  data_path   = os.path.abspath(my_home+'/public_html/upload/data')+'/'
+  return [data_path]
 
-def printHTMLmsg(message):
+def print_html_msg(message):
   print """\
 Content-Type: text/html\n
 <html>
 <body>
 <p>%s</p>
-&nbsp;&nbsp;<a href="upload.py">return to file Upload</a><Br>
+&nbsp;&nbsp;<a href="upload.py">click here to return to file upload</a><Br>
 </body>
 </html>
 """ % (message)
-  pass;
+  pass

@@ -4,8 +4,11 @@ import sys
 import cgi
 import cgitb
 import web_environment
-[dataPath] = web_environment.myPaths() 
-cgitb.enable(); form = cgi.FieldStorage() 
+
+[data_path] = web_environment.my_paths() 
+
+cgitb.enable()
+form = cgi.FieldStorage() 
 
 print """\
 Content-Type: text/html; charset=utf-8\n
@@ -21,20 +24,20 @@ s+='<form enctype="multipart/form-data" action="./save_file.py" method="post">';
 s+='<p>File: <input type="file" name="filename" /></p>'
 s+='<p><input type="submit" value="Upload" /></p></form>'
 if(False):
-  existingTextFiles = [ ] 
+  existing_text_files = [ ] 
   if os.path.exists("fileList.txt"):
-    existingTextFiles = open("fileList.txt").read().strip().split("\n");
+    existing_text_files = open("fileList.txt").read().strip().split("\n");
   h = [ ] 
   s += "<h3>Review existing files</h3>"
-  for f in existingTextFiles:
+  for f in existing_text_files:
     ff = os.path.basename( f).strip();
     if( ff=='output.pdf'):	
       continue;
-    baseName = os.path.basename(f.strip()).strip();
-    linkString = '<a href="./'+ baseName +'">'+ baseName +'</a>' 
+    base_name = os.path.basename(f.strip()).strip();
+    link_string = '<a href="./'+ base_name +'">'+ base_name +'</a>' 
     s+=('<form enctype="multipart/form-data" action="./delete_file.py" method="post">')
-    s+=('Delete file:<input type="text" name="filetodelete" value="'+ baseName+'"/> ')
-    s+=('</u>' +linkString+ '&nbsp;&nbsp;<input type="submit" value="Confirm delete" /></form>')  
+    s+=('Delete file:<input type="text" name="filetodelete" value="'+ base_name+'"/> ')
+    s+=('</u>' +link_string+ '&nbsp;&nbsp;<input type="submit" value="Confirm delete" /></form>')  
 
 print s
 
