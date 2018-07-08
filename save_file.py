@@ -7,7 +7,8 @@ cgitb.enable(); form = cgi.FieldStorage() #-------------------------------#
 fileitem = form['filename']
 message = "";
 fileList =""
-os.mkdir(dataPath)
+a = os.system("mkdir -p " + dataPath)
+a = os.system("chmod 700 " + dataPath)
 if( os.path.exists( dataPath+"/fileList.txt")):
   fileList = open(dataPath+"/fileList.txt").read().strip()
 filesInList = fileList.split("\n");
