@@ -17,7 +17,7 @@ print """\
 <hr>
 """
 s = "<h3>Upload file</h3>"
-s+='<form enctype="multipart/form-data" action="./saveFile.py" method="post">';
+s+='<form enctype="multipart/form-data" action="./save_file.py" method="post">';
 s+='<p>File: <input type="file" name="filename" /></p>'
 s+='<p><input type="submit" value="Upload" /></p></form>'
 if(False):
@@ -32,7 +32,7 @@ if(False):
       continue;
     baseName = os.path.basename(f.strip()).strip();
     linkString = '<a href="./'+ baseName +'">'+ baseName +'</a>' 
-    s+=('<form enctype="multipart/form-data" action="./deleteFile.py" method="post">')
+    s+=('<form enctype="multipart/form-data" action="./delete_file.py" method="post">')
     s+=('Delete file:<input type="text" name="filetodelete" value="'+ baseName+'"/> ')
     s+=('</u>' +linkString+ '&nbsp;&nbsp;<input type="submit" value="Confirm delete" /></form>')  
 

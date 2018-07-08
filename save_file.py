@@ -6,7 +6,8 @@ cgitb.enable(); form = cgi.FieldStorage() #-------------------------------#
 #-------------------------------------------------------------------------#
 fileitem = form['filename']
 message = "";
-fileList ="" 
+fileList =""
+os.mkdir(dataPath)
 if( os.path.exists( dataPath+"/fileList.txt")):
   fileList = open(dataPath+"/fileList.txt").read().strip()
 filesInList = fileList.split("\n");
