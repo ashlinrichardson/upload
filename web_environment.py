@@ -1,12 +1,15 @@
 import os
+
+
 def my_paths():
-  from os.path import expanduser
-  my_home = expanduser("~")
-  data_path   = os.path.abspath(my_home+'/public_html/upload/data')+'/'
-  return [data_path]
+    from os.path import expanduser
+    my_home = expanduser("~")
+    data_path = os.path.abspath(my_home+'/public_html/upload/data') + '/'
+    return [data_path]
+
 
 def print_html_msg(message):
-  print """\
+    print """\
 Content-Type: text/html\n
 <html>
 <body>
@@ -15,4 +18,4 @@ Content-Type: text/html\n
 </body>
 </html>
 """ % (message)
-  pass
+    pass
